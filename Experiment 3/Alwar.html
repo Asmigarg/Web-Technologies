@@ -1,0 +1,133 @@
+<html>
+<head> <title> Alwar Tourism </title> </head>
+<style>
+	*{
+	    padding: 0;
+	    margin: 0;
+	    box-sizing: border-box;
+	}
+	body{
+            background-image: url("bg.jpg");
+	    background-repeat: no-repeat;
+            background-size: cover;
+        }
+	nav{
+            margin-top: 0px;
+            width: 100%;
+            padding: 0.6em;
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+            backdrop-filter: blur(2rem);
+            font-family: poppins;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+	ul {
+            list-style: none;
+            display: flex;
+            gap: 4rem;
+        }
+        .nav_links {
+            color: black;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .nav_logo {
+            text-decoration: none;
+            font-size: 1.55rem;
+            color: black;
+        }
+	.nav_links:hover {
+            color: 669ccb;
+        }
+        .nav_links:focus {
+            outline: black;
+            color: 0c0b0e;
+        }
+        nav li:hover {
+            transition: transform 0.3s, color 0.3s;
+            transform: scale(1.125);
+        }
+        nav li:focus {
+            transition: transform 0.3s, color 0.3s;
+            transform: scale(1.125);
+        }
+	header {
+            color: white;
+        }
+        .maindiv {
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 14.5rem 4rem;
+            font-family: "Roboto", sans-serif;
+        }
+
+        header h1 {
+            font-size: 5.25rem;
+            font-weight: 500;
+            line-height: 5rem;
+            margin-bottom: 1.1rem;
+        }
+
+	header p {
+            margin-bottom: 1.5rem;
+            font-size: 17px;
+        }
+
+        header button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            color: "f3f4f6";
+            background-color: 669ccb;
+            font-size: 1rem;
+            cursor: pointer;   
+        }
+
+        header button:hover {
+            background-color: 5681a7;
+        }
+
+	.footer {
+            position: sticky;
+            left: 0;
+            bottom: 2px;
+            width: 100%;
+            background-color: black;
+            opacity: 0.5;
+            color: white;
+            text-align: left;
+            padding: 10px;
+        }
+</style>
+
+<body>
+    <nav>
+        <a class = "nav_logo" href=" "> RajasthanTravels.in </a>
+        <ul>
+            <li> <a class = "nav_links" href = "#about"> About </a> </li>
+            <li> <a class = "nav_links" href = "#hotels"> Hotels </a> </li>
+            <li> <a class = "nav_links" href = "#activities"> Activities to Do </a> </li>
+            <li> <a class = "nav_links" href = "#attractions"> Top Attractions </a> </li>
+        </ul>
+    </nav>
+
+    <div class = "maindiv">
+        <header>
+            <h1> ALWAR </h1>
+            <p>Alwar is a city located in India's National Capital Region and the administrative headquarters of Alwar District in the state of Rajasthan. It is located 150 km south of Delhi and 150 km north of Jaipur. At present the district is famous for production of mustard plant, manufacturing of Ray Ban eyeglasses, Beer production plants and frozen food industry.
+	    </p>
+            <button> Explore </button>
+        </header>
+    </div>
+
+    <marquee class = "footer">
+    <p> Copyright@2024 | All Rights Reserved</p>
+    </marquee>
+
+</body>
+</html>
