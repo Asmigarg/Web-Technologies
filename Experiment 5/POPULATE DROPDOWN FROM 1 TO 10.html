@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Options</title>
+</head>
+<body>
+    <h2>Dropdown Box with Options 1 to 10</h2>
+    <select id="dropdown">
+    </select>
+    <script>
+        function populateDropdown() {
+            const dropdown=document.getElementById("dropdown");
+            for (let i=1;i<=10;i++) {
+                const option=document.createElement("option");
+                option.text=i;
+                option.value=i;
+                dropdown.appendChild(option);
+            }
+        }
+        populateDropdown();
+    </script>
+</body>
+</html>

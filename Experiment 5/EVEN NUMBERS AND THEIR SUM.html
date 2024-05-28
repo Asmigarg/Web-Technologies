@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Numbers and Their Sum</title>
+</head>
+<script>
+    function findEvenNumbersAndSum(start,end) {
+        let sum=0;
+        let evenNumbers=[];
+
+        if(start %2!==0){
+            start++;
+        }
+
+        for(let i=start;i<=end;i+=2){
+            sum +=i;
+            evenNumbers.push(i);
+        }
+
+        return{evenNumbers,sum};
+    }
+
+    function runProgram(){
+        const startInterval=parseInt(document.getElementById("startInterval").value);
+        const endInterval=parseInt(document.getElementById("endInterval").value);
+
+        if (isNaN(startInterval)||isNaN(endInterval)) {
+            alert("Invalid input.Please enter valid numbers.");
+            return;
+        }
+
+        const {evenNumbers,sum }=findEvenNumbersAndSum(startInterval,endInterval);
+
+        document.getElementById("result").innerHTML="<p>Even Numbers within the interval: "+evenNumbers.join(", ")+"</p>";
+        document.getElementById("result").innerHTML+="<p>Sum of Even Numbers: "+sum+"</p>";
+    }
+</script>
+</head>
+<body>
+
+<h2>Find Even Numbers and Their Sum</h2>
+
+<label for="startInterval">Start of Interval:</label>
+<input type="text" id="startInterval" placeholder="Enter start of interval"><br><br>
+
+<label for="endInterval">End of Interval:</label>
+<input type="text" id="endInterval" placeholder="Enter end of interval"><br><br>
+
+<button onclick="runProgram()">Run</button>
+
+<div id="result"></div>
+
+</body>
+</html>

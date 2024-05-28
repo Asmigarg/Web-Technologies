@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Palindrome Numbers and Sum</title>
+  </head>
+  <body>
+    <h2>Palindrome Numbers and Sum</h2>
+    <label for="start">Enter the start of the interval:</label>
+    <input type="number" id="start" name="start" min="1" value=" " placeholder="Enter Start Interval"><br><br>
+    <label for="end">Enter the end of the interval:</label>
+    <input type="number" id="end" name="end" min="start" value=" " placeholder="Enter End Interval"><br><br>
+    <button onclick="findPalindromes()">Find Palindromes</button>
+    <p id="result"></p>
+    <p id="sum"></p>
+
+    <script>
+      function findPalindromes() {
+        let start = document.getElementById("start").value;
+        let end = document.getElementById("end").value;
+        let sum = 0;
+        let resultString = "Palindrome numbers between " + start + " and " + end + " are: ";
+        for (let num = start; num <= end; num++) {
+          if (isPalindrome(num)) {
+            resultString += num + " ";
+            sum += Number(num);
+          }
+        }
+        document.getElementById("result").innerHTML = resultString;
+        document.getElementById("sum").innerHTML = sum;
+      }
+
+      function isPalindrome(num) {
+        let numStr = String(num);
+        let reversedNumStr = numStr.split('').reverse().join('');
+        return numStr === reversedNumStr;
+      }
+    </script>
+  </body>
+</html>
