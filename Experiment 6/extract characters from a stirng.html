@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extract Characters Example</title>
+  <script>
+    function extractChars(str, numChars) {
+      if (str && numChars > 0 && numChars <= str.length) {
+        return str.substring(0, numChars);
+      } else {
+        return '';
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Extract Characters Example</h1>
+  <p>Enter a string and a number of characters to extract:</p>
+  <input type="text" id="inputString" value="Hello, world!">
+  <input type="number" id="inputNumChars" value="5">
+  <button onclick="extractCharsFromInput()">Extract</button>
+  <p id="output"></p>
+
+  <script>
+    function extractCharsFromInput() {
+      const inputString = document.getElementById('inputString').value;
+      const numChars = document.getElementById('inputNumChars').value;
+      const extractedString = extractChars(inputString, numChars);
+      document.getElementById('output').textContent = extractedString;
+    }
+  </script>
+</body>
+</html>

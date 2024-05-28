@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Course Registration Form</h2>
+
+<form name="registration" onsubmit="return formValidation()">
+  First Name: <input type="text" name="fname"><br><br>
+  Last Name: <input type="text" name="lname"><br><br>
+  Address: <input type="text" name="address"><br><br>
+  Gender: <input type="radio" name="gender" value="male">Male
+  <input type="radio" name="gender" value="female">Female<br><br>
+  Email: <input type="text" name="email"><br><br>
+  Password: <input type="password" name="passid"><br><br>
+  Confirm Password: <input type="password" name="cpassid"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+function formValidation()
+{
+  var fname = document.registration.fname;
+  var lname = document.registration.lname;
+  var address = document.registration.address;
+  var gender = document.registration.gender;
+  var email = document.registration.email;
+  var passid = document.registration.passid;
+  var cpassid = document.registration.cpassid;
+
+  if(fname.value == "" || lname.value == "" || address.value == "" || gender.value == "" || email.value == "" || passid.value == "" || cpassid.value == "")
+  {
+    alert("All fields must be filled out");
+    return false;
+  }
+
+  if(passid.value != cpassid.value)
+  {
+    alert("Passwords do not match");
+    return false;
+  }
+
+  var reEmail = /\S+@\S+\.\S+/;
+  if(!reEmail.test(email.value))
+  {
+    alert("Invalid email address");
+    return false;
+  }
+
+  return true;
+}
+</script>
+
+</body>
+</html>

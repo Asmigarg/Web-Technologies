@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+    input[type="text"] {
+        padding: 8px;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Age Calculator</h2>
+<input type="text" id="dobInput" placeholder="Enter your date of birth (YYYY-MM-DD)">
+<button onclick="calculateAge()">Calculate Age</button>
+<div id="result"></div>
+
+<script>
+function calculateAge() {
+    const dobInput = document.getElementById('dobInput');
+    const resultDiv = document.getElementById('result');
+    const dob = dobInput.value.trim();
+    if (!dob) {
+        resultDiv.textContent = "Please enter a valid date of birth.";
+        return;
+    }
+
+    const dobDate = new Date(dob);
+
+    
+    if (isNaN(dobDate.getTime())) {
+        resultDiv.textContent = "Please enter a valid date of birth in the format YYYY-MM-DD.";
+        return;
+    }
+
+    const currentDate = new Date();
+    let timeDiff = currentDate.getTime() - dobDate.getTime();
+    const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const years = Math.floor(daysDiff / 365);
+    const remainingDays = daysDiff % 365;
+    const months = Math.floor(remainingDays / 30);
+    const remainingDaysInMonth = remainingDays % 30;
+    resultDiv.textContent = `You are ${years} years, ${months} months, and ${remainingDaysInMonth} days old.`;
+}
+</script>
+</body>
+</html>
